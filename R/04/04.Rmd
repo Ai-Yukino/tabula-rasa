@@ -1,0 +1,151 @@
+---
+title: "Importing and Transforming Data Exercises"
+author: Ai Yukino
+output: pdf_document
+urlcolor: blue
+---
+
+## Import packages
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(AER)
+```
+
+## Exercise 1
+
+### List all example files available with the readr library.
+
+```{r}
+readr_example()
+```
+
+\newpage
+
+## Exercise 2
+
+### Read the `mtcars.csv` file.
+
+```{r message = FALSE}
+file_path <- readr_example("mtcars.csv")
+read_csv(file = file_path)
+```
+
+\newpage
+
+## Exercise 3
+
+### Read the first 10 lines from the `mtcars.csv` file.
+
+```{r message = FALSE}
+file_path <- readr_example("mtcars.csv")
+read_csv(file_path, n_max = 10)
+```
+
+\newpage
+
+## Exercise 4
+
+### Read the `example.log` file.
+
+```{r message = FALSE}
+file_path <- readr_example("example.log")
+read_csv(file_path)
+```
+
+\newpage
+
+## Exercise 5
+
+### List all sheets in `readxl_example("datasets.xlsx")`.
+
+
+```{r}
+file_path <- readxl_example("datasets.xlsx")
+excel_sheets(file_path)
+```
+
+\newpage
+
+## Exercise 6
+
+### Read data from the last sheet.
+
+```{r}
+file_path <- readxl_example("datasets.xlsx")
+read_xlsx(file_path, sheet = "quakes")
+```
+
+\newpage
+
+## Exercise 7
+
+### Load the `dplyr` package. Install and load the `AER` package and run the command `data("Fertility")` which loads the dataset Fertility to your workspace. Take a `glimpse()` at the data.
+
+```{r}
+data("Fertility")
+glimpse(Fertility)
+```
+
+\newpage
+
+## Exercise 8
+
+### Select rows 35 to 50 and print to console its age and work entry.
+
+```{r}
+Fertility %>%
+  {.[c(35, 50),]} %>%
+  select(age, work)
+```
+
+\newpage
+
+## Exercise 9
+
+### Select the last row in the dataset and print to console.
+
+```{r}
+tail(Fertility, 1)
+```
+
+\newpage
+
+## Exercise 10
+
+### Count how many women proceeded to have a third child.
+
+```{r}
+Fertility %>%
+  filter(morekids == "yes") %>%
+  nrow()
+```
+
+\newpage
+
+## Exercise 11
+
+### There are four possible gender combinations for the first two children. Which is the most common?
+
+```{r}
+ff <- Fertility %>%
+  filter(gender1 == "female", gender2 == "female") %>%
+  nrow()
+fm <- Fertility %>%
+  filter(gender1 == "female", gender2 == "male") %>%
+  nrow()
+mm <- Fertility %>%
+  filter(gender1 == "male", gender2 == "male") %>%
+  nrow()
+mf <- Fertility %>%
+  filter(gender1 == "male", gender2 == "female") %>%
+  nrow()
+
+tb <- tibble(gender_pair = c("female-female", "female-male",
+                       "male-male", "male-female"),
+       count = c(ff, fm, mm, mf))
+tb
+```
+
+So the "male-male" pair is most common.
