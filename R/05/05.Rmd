@@ -1,0 +1,55 @@
+---
+title: "Model Exercises"
+author: Ai Yukino
+output: pdf_document
+urlcolor: blue
+---
+
+[HW link](https://titus.techtalentsouth.com/mod/assign/view.php?id=56556)
+
+## Import packages
+
+```{r}
+library(tidyverse)
+library(modelr)
+```
+
+## Exercise 1
+
+### Familiarize yourself with the `heights` data set provided with the `modelr` package.
+
+```{r}
+data(heights)
+heights
+# ?heights
+```
+
+## Exercise 2
+
+Create a list of formulas for modeling income with:
+- `height`
+- `height` $\cdot$ `weight`
+- linear combination of all variables
+
+
+```{r}
+ggplot(data = heights, aes(y = income, x = height)) + 
+  geom_point()
+```
+
+```{r}
+ggplot(data = heights, aes(y = income, x = height * weight)) + 
+  geom_point()
+```
+
+```{r}
+tb <- heights
+tb$height_times_weight = tb$height * tb$weight
+
+ggplot(data = tb, aes(y = income, x = height_times_weight)) + 
+  geom_point()
+```
+
+
+
+
