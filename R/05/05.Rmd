@@ -14,9 +14,13 @@ library(tidyverse)
 library(modelr)
 ```
 
+\newpage
+
 ## Exercise 1
 
-### Familiarize yourself with the `heights` data set provided with the `modelr` package.
+Familiarize yourself with the `heights` data set provided with the `modelr` package.
+
+### Solution
 
 ```{r}
 data(heights)
@@ -24,32 +28,107 @@ heights
 # ?heights
 ```
 
+\newpage
+
 ## Exercise 2
 
 Create a list of formulas for modeling income with:
+
 - `height`
 - `height` $\cdot$ `weight`
 - linear combination of all variables
 
+### Solution
 
 ```{r}
-ggplot(data = heights, aes(y = income, x = height)) + 
-  geom_point()
+concat_col <- paste(colnames(heights)[-1], collapse=" + ")
+
+formulas <- paste0("income ~ ", c("height", "height * weight", concat_col))
+
+formulas
+```
+
+\newpage
+
+## Exercise 3
+
+From the data, remove rows containing NA’s. Fit the linear model with the formulas from exercise 2.
+
+### Solution
+
+```{r}
+heights <- heights %>%
+  drop_na()
 ```
 
 ```{r}
-ggplot(data = heights, aes(y = income, x = height * weight)) + 
-  geom_point()
+model_height <- lm(formula = formulas[1], data = heights)
+model_height_times_weight <- lm(formula = formulas[2], data = heights)
+model_all <- lm(formula = formulas[3], data = heights)
+```
+
+
+```{r}
+summary(model_height)
 ```
 
 ```{r}
-tb <- heights
-tb$height_times_weight = tb$height * tb$weight
+summary(model_height_times_weight)
+```
 
-ggplot(data = tb, aes(y = income, x = height_times_weight)) + 
+```{r}
+summary(model_all)
+```
+
+\newpage
+
+## Exercise 4
+
+For each fit, calculate RMSE.
+
+### Solution
+
+```{r}
+rmse(model_height, heights)
+```
+
+```{r}
+rmse(model_height_times_weight, heights)
+```
+
+```{r}
+rmse(model_all, heights)
+```
+
+\newpage
+
+## Exercise 5
+
+For each model, add residuals to the data and plot their distribution. (Hint: use `lift_dl()`.)
+
+### Solution
+
+```{r}
+residuals <- resid(model_height)
+
+ggplot(data = heights, aes(x = income, y = residuals)) + 
   geom_point()
 ```
 
+\newpage
 
+```{r}
+residuals <- resid(model_height_times_weight)
 
+ggplot(data = heights, aes(x = income, y = residuals)) + 
+  geom_point()
+```
 
+\newpage
+
+```{r}
+residuals <- resid(model_all)
+
+ggplot(data = heights, aes(x = income, y = residuals)) + 
+  geom_point()
+```
