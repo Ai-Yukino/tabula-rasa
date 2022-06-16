@@ -62,8 +62,8 @@ ggplot(data = tb, aes(x = CPI, y = HDI, color = Region)) +
 ### (5) Map the size of the points to HDI.Rank
 
 ```{r}
-ggplot(data = tb, aes(x = CPI, y = HDI, color = Region)) + 
-  geom_point(size = tb$HDI.Rank)
+ggplot(data = tb, aes(x = CPI, y = HDI, color = Region, size = tb$HDI.Rank)) + 
+  geom_point()
 ```
 
 \newpage
