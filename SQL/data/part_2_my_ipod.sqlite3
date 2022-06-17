@@ -1,0 +1,5 @@
+UPDATE User 
+SET FirstName = 'Wesley A.',
+	LastName = 'Chambers IV',
+	UpdatedAt = CURRENT_TIMESTAMP
+WHERE UserID = 1;
