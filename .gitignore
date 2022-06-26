@@ -1,3 +1,6 @@
+# Jupyter Notebook cache
+.ipynb_checkpoints
+
 # R Studio cache
 *.RData
 *.Rhistory
