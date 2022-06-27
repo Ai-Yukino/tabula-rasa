@@ -17,7 +17,7 @@
 #
 # ---
 #
-# Ai's solutions to [this notebook](https://github.com/zachhall/pandas_exercises/tree/master/02_Filtering_%26_Sorting/Fictional%20Army)
+# Ai's solutions for [/02_Filtering_&_Sorting/Fictional Army](https://github.com/zachhall/pandas_exercises/tree/master/02_Filtering_%26_Sorting/Fictional%20Army)
 
 # ## ❄ Step 1. Import the necessary libraries
 

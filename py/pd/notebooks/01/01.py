@@ -18,7 +18,7 @@
 #
 # ---
 #
-# Ai's solutions for this [notebook](https://github.com/zachhall/pandas_exercises/tree/master/01_Getting_%26_Knowing_Your_Data/Occupation)
+# Ai's solutions for [/01_Getting_&_Knowing_Your_Data/Occupation](https://github.com/zachhall/pandas_exercises/tree/master/01_Getting_%26_Knowing_Your_Data/Occupation)
 #
 # -
 
