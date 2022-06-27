@@ -15,4 +15,10 @@ conda env create -f pd.yml
 conda activate pd
 ```
 
-Otherwise, please reach out to me if you still can't run the notebooks.
+- Use Jupyter Lab while your terminal is navigated to `tabula-rasa/py/pd/` to view the notebooks, i.e.
+
+```
+jupyter lab --no-browser
+```
+
+If following the above steps still doesn't allow you to run the notebooks in `tabula-rasa/py/pd/notebooks/`, please let me know!
