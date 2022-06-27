@@ -1,0 +1,37 @@
+# black -> 393432
+# white -> FCC9B9
+# axes labels -> FFB61E
+# 🔗 https://en.wikipedia.org/wiki/Traditional_colors_of_Japan
+
+lines.color: FCC9B9
+patch.edgecolor: FCC9B9
+
+text.color: FCC9B9
+
+axes.facecolor: 393432
+axes.edgecolor: FCC9B9
+axes.labelcolor: FFB61E
+axes.titlecolor: FFB61E
+
+# 🔗 https://personal.sron.nl/~pault/#sec:qualitative -> Figure 1
+axes.prop_cycle: cycler('color', ['4477AA', 'EE6677', '228833', 'CCBB44', '66CCEE', 'AA3377', 'BBBBBB'])
+
+xtick.color: FCC9B9
+ytick.color: FCC9B9
+
+grid.color: FCC9B9
+
+figure.facecolor: 393432
+figure.edgecolor: 393432
+
+savefig.facecolor: 393432
+savefig.edgecolor: 393432
+
+legend.labelcolor: white
+
+### Boxplots
+boxplot.boxprops.color: FCC9B9
+boxplot.capprops.color: FCC9B9
+boxplot.flierprops.color: FCC9B9
+boxplot.flierprops.markeredgecolor: FCC9B9
+boxplot.whiskerprops.color: FCC9B9
