@@ -18,7 +18,7 @@
 #
 # ---
 #
-# Ai's solutions for this [notebook](https://github.com/zachhall/pandas_exercises/blob/master/01_Getting_%26_Knowing_Your_Data/Occupation/Exercises.ipynb)
+# Ai's solutions for this [notebook](https://github.com/zachhall/pandas_exercises/tree/master/01_Getting_%26_Knowing_Your_Data/Occupation)
 #
 # -
 
@@ -80,7 +80,7 @@ df.describe()
 
 # ## ❄ Step 15. Summarize all the columns
 
-df.describe(include = "all")
+df.describe(include="all")
 
 # ## 🌸 Step 16. Summarize only the occupation column
 
