@@ -14,7 +14,7 @@
 # ---
 
 # + [markdown] tags=[]
-# # `tabula-rasa/py/pd/03.ipynb`
+# # `tabula-rasa/py/pd/notebooks/03/03.ipynb`
 #
 # ---
 #

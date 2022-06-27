@@ -13,7 +13,7 @@
 #     name: python3
 # ---
 
-# # `tabula-rasa/py/pd/04.ipynb`
+# # `tabula-rasa/py/pd/notebooks/04/04.ipynb`
 #
 # ---
 #

@@ -13,8 +13,7 @@
 #     name: python3
 # ---
 
-# # `tabula-rasa/py/pd/02.ipynb`
-#
+# # `tabula-rasa/py/pd/notebooks/02/02.ipynb`
 # ---
 #
 # Ai's solutions for [/02_Filtering_&_Sorting/Fictional Army](https://github.com/zachhall/pandas_exercises/tree/master/02_Filtering_%26_Sorting/Fictional%20Army)
