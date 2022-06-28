@@ -13,7 +13,7 @@
 #     name: python3
 # ---
 
-# # `tabula-rasa/py/sklearn/sklearn.ipynb`
+# # `tabula-rasa/py/sklearn/A.ipynb`
 #
 # ---
 #
